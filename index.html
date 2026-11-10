@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Backbeat · Alpaca</title>
+    <meta name="description" content="Alpaca 的个人主页。做 IoT 产品，业余打鼓，写小工具和博客。在这里找到我的作品、开源项目和正在做的事。">
+    <meta name="theme-color" content="#f6f3ed">
+    <meta property="og:title" content="Backbeat · Alpaca">
+    <meta property="og:description" content="做 IoT 产品，业余打鼓，写小工具和博客。这里收着 Alpaca 的作品，也记录一些正在发生的事。">
+    <script>
+      (() => {
+        let theme;
+        try { theme = localStorage.getItem('backbeat.theme'); } catch {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#191918' : '#f6f3ed';
+      })();
+    </script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="intro">
+        <div class="intro-top">
+          <div class="rhythm-mark" role="img" aria-label="十六步节奏，重音落在第二和第四拍">
+            <svg viewBox="0 0 220 32" width="220" height="32" aria-hidden="true">
+              <g class="steps">
+                <rect x="0" y="9" width="8" height="14" rx="2"/>
+                <rect x="12" y="9" width="8" height="14" rx="2"/>
+                <rect x="24" y="9" width="8" height="14" rx="2"/>
+                <rect x="36" y="9" width="8" height="14" rx="2"/>
+                <rect x="70" y="9" width="8" height="14" rx="2"/>
+                <rect x="82" y="9" width="8" height="14" rx="2"/>
+                <rect x="94" y="9" width="8" height="14" rx="2"/>
+                <rect x="116" y="9" width="8" height="14" rx="2"/>
+                <rect x="128" y="9" width="8" height="14" rx="2"/>
+                <rect x="140" y="9" width="8" height="14" rx="2"/>
+                <rect x="152" y="9" width="8" height="14" rx="2"/>
+                <rect x="186" y="9" width="8" height="14" rx="2"/>
+                <rect x="198" y="9" width="8" height="14" rx="2"/>
+                <rect x="210" y="9" width="8" height="14" rx="2"/>
+              </g>
+              <g class="accents">
+                <rect x="58" y="2" width="8" height="28" rx="2"/>
+                <rect x="174" y="2" width="8" height="28" rx="2"/>
+              </g>
+            </svg>
+            <span class="beat-count" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></span>
+          </div>
+          <button class="theme-toggle" id="theme-toggle" type="button" hidden>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 13.2A8.7 8.7 0 0 1 10.8 3.5a8.7 8.7 0 1 0 9.7 9.7Z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
+            <span id="theme-label">深色</span>
+          </button>
+        </div>
+        <h1>Backbeat<span class="wordmark-stop" aria-hidden="true">.</span></h1>
+        <p class="byline">Alpaca 的个人主页</p>
+        <p class="bio">IoT 产品经理，做茶饮机和咖啡机的设备平台。<br class="desktop-break">业余打鼓，最近在补爵士。下班写点小工具，也写博客。</p>
+        <p class="intro-note">重音落在第二、第四拍。生活也有自己的节奏。</p>
+      </header>
+
+      <main>
+        <section class="section works" aria-labelledby="works-heading">
+          <div class="section-heading"><h2 id="works-heading">能直接打开的作品</h2><span class="section-number" aria-hidden="true">01</span></div>
+          <div class="project-grid">
+            <a class="project-card featured" href="https://alpacaa1.github.io/drum-808/" target="_blank" rel="noopener">
+              <span class="featured-label">招牌作品</span>
+              <h3>Drum 808<span class="project-subtitle">浏览器里的节奏机</span></h3>
+              <p>用实时合成的八种鼓声写下自己的律动，支持三连音网格和键盘演奏。</p>
+              <span class="card-action">打开节奏机 <span class="arrow" aria-hidden="true">↗</span></span>
+            </a>
+            <a class="project-card" href="https://alpacaa1.github.io/design-sense-lab/" target="_blank" rel="noopener">
+              <div class="card-title"><h3>Design Sense Lab</h3><span class="arrow" aria-hidden="true">↗</span></div>
+              <p>训练组件尺寸直觉、调整文档排版的纯前端工作台。</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="writing-heading">
+          <div class="section-heading"><h2 id="writing-heading">写的</h2><span class="section-number" aria-hidden="true">02</span></div>
+          <a class="writing-link" href="https://alpacaa1.github.io/Alpaca-Notes-CMS/" target="_blank" rel="noopener">
+            <div class="entry-heading"><h3>Alpaca Notes<span class="entry-kind">博客</span></h3><span class="arrow" aria-hidden="true">↗</span></div>
+            <p>写产品、数据、IoT，也写生活、阶段感受和零碎观察。</p>
+          </a>
+        </section>
+
+        <section class="section" aria-labelledby="source-heading">
+          <div class="section-heading"><h2 id="source-heading">开源</h2><span class="section-number" aria-hidden="true">03</span></div>
+          <ul class="source-list">
+            <li><a href="https://github.com/alpacaA1/drum-808" target="_blank" rel="noopener"><span class="source-name">drum-808</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/alpacaA1/design-sense-lab" target="_blank" rel="noopener"><span class="source-name">design-sense-lab</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/alpacaA1/podcast-lens" target="_blank" rel="noopener"><span><span class="source-name">podcast-lens</span><span class="source-description">小宇宙播客音频提取与伴读工具（桌面版）</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="progress-heading">
+          <div class="section-heading"><h2 id="progress-heading">在做</h2><span class="section-number" aria-hidden="true">04</span></div>
+          <ul class="progress-list">
+            <li><div class="entry-heading"><h3>鼓凳上的群英谱</h3><span class="status">进行中</span></div><p>一个爵士新手的听歌笔记展览，每月介绍一位乐手。</p></li>
+            <li><div class="entry-heading"><h3>Pace</h3><span class="status">进行中</span></div><p>按节奏提醒休息的护眼工具。</p></li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="sites-heading">
+          <div class="section-heading"><h2 id="sites-heading">常逛的网站</h2><span class="section-number" aria-hidden="true">05</span></div>
+          <ul class="source-list">
+            <li><a href="https://howtocook.aiursoft.com/" target="_blank" rel="noopener"><span><span class="source-name">How To Cook</span><span class="site-domain">howtocook.aiursoft.com</span><span class="source-description">开源菜谱「程序员做饭指南」的网页版，菜谱写得像技术文档，用量和步骤都精确。</span></span><span class="arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
+
+        <section class="section contact" aria-labelledby="contact-heading">
+          <div class="section-heading"><h2 id="contact-heading">联系</h2><span class="section-number" aria-hidden="true">06</span></div>
+          <a class="contact-link" href="https://github.com/alpacaA1" target="_blank" rel="noopener"><span>GitHub<span class="contact-handle">@alpacaA1</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+        </section>
+      </main>
+
+      <footer><span>© 2026 Backbeat</span><span aria-hidden="true">2 &amp; 4</span></footer>
+    </div>
+  </body>
+</html>
